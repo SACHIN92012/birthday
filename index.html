@@ -5,62 +5,176 @@
   <title>Happy Birthday Anamika!</title>
   <style>
     body {
-      background: linear-gradient(to right, #ffecd2, #fcb69f);
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      text-align: center;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #333;
+      text-align: center;
+      overflow-x: hidden;
     }
+
     h1 {
-      font-size: 3em;
-      margin-top: 50px;
+      margin-top: 60px;
+      font-size: 3.5em;
       color: #ff4081;
+      animation: fadeIn 2s ease-in-out;
     }
+
+    h2 {
+      font-size: 2em;
+      color: #ff6f61;
+      margin-top: 10px;
+      animation: fadeIn 2.5s ease-in-out;
+    }
+
     p {
-      font-size: 1.5em;
+      font-size: 1.4em;
+      margin: 20px auto;
+      max-width: 700px;
+      line-height: 1.6;
+      animation: fadeIn 3s ease-in-out;
     }
+
     .balloons {
-      margin-top: 30px;
+      margin-top: 40px;
     }
+
     .balloon {
       display: inline-block;
-      width: 60px;
-      height: 80px;
+      width: 70px;
+      height: 90px;
       background-color: #ff4081;
       border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
       position: relative;
       animation: float 3s ease-in-out infinite;
+      margin: 0 10px;
     }
+
     .balloon::after {
       content: '';
       position: absolute;
       width: 2px;
-      height: 30px;
-      background: #333;
-      top: 80px;
-      left: 29px;
+      height: 40px;
+      background: #555;
+      top: 90px;
+      left: 34px;
     }
+
     @keyframes float {
       0% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
+      50% { transform: translateY(-30px); }
       100% { transform: translateY(0); }
     }
-    .message {
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    .photo {
+      margin: 30px auto;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      background-image: url('https://source.unsplash.com/250x250/?birthday,cake'); /* Replace with her photo URL */
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 0 30px rgba(255, 64, 129, 0.5);
+      animation: fadeIn 3.5s ease-in-out;
+    }
+
+    .love-note {
+      font-size: 1.5em;
+      color: #d81b60;
       margin-top: 30px;
+      font-style: italic;
+      animation: fadeIn 4s ease-in-out;
+    }
+
+    .sparkles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .sparkle {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: #fff;
+      opacity: 0.7;
+      border-radius: 50%;
+      animation: sparkle 4s linear infinite;
+    }
+
+    @keyframes sparkle {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(800px) scale(0.5);
+        opacity: 0;
+      }
+    }
+
+    footer {
+      margin-top: 50px;
       font-size: 1.2em;
+      color: #555;
+      padding-bottom: 30px;
     }
   </style>
 </head>
 <body>
   <h1>🎉 Happy Birthday Anamika! 🎂</h1>
-  <p>Wishing you a day filled with love, laughter, and lots of cake! 🍰</p>
+  <h2>To the most beautiful girlfriend in the universe ❤️</h2>
+
+  <div class="photo"></div>
+
+  <p>
+    Today we celebrate not just your birthday, but the beautiful soul you are — kind, strong, funny, and incredibly loving.  
+    You light up my life in ways I never imagined possible.
+  </p>
+
+  <p>
+    Thank you for being my biggest cheerleader, my best friend, and my favorite person to dream with.  
+    I hope this year brings you as much happiness as you’ve brought into my life.
+  </p>
+
   <div class="balloons">
     <div class="balloon" style="background-color: #ff4081;"></div>
     <div class="balloon" style="background-color: #ffeb3b;"></div>
     <div class="balloon" style="background-color: #4caf50;"></div>
     <div class="balloon" style="background-color: #2196f3;"></div>
+    <div class="balloon" style="background-color: #9c27b0;"></div>
   </div>
-  <div class="message">
-    May all your dreams come true, and may this year be your best one yet! 💖
+
+  <div class="love-note">
+    "I can't wait to make more beautiful memories with you. Here's to many more birthdays together, my love! 💖"
   </div>
+
+  <div class="sparkles">
+    <!-- Generate sparkles -->
+    <script>
+      for (let i = 0; i < 50; i++) {
+        const sparkle = document.createElement('div');
+        sparkle.classList.add('sparkle');
+        sparkle.style.left = Math.random() * 100 + 'vw';
+        sparkle.style.animationDelay = Math.random() * 5 + 's';
+        sparkle.style.backgroundColor = ['#fff', '#ff4081', '#ffd700', '#90ee90'][Math.floor(Math.random() * 4)];
+        document.querySelector('.sparkles').appendChild(sparkle);
+      }
+    </script>
+  </div>
+
+  <footer>
+    Made with 💕 just for you, Anamika.
+  </footer>
 </body>
 </html>
